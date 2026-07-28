@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "SonarQube → Prompt IA",
+  "version": "0.2.0",
+  "description": "Condense les issues SonarQube de la page courante en un prompt prêt à coller dans une IA.",
+  "permissions": ["activeTab", "scripting", "storage", "clipboardWrite"],
+  "action": {
+    "default_title": "Générer un prompt IA depuis les issues SonarQube",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+    }
+  },
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png",
+    "256": "icons/icon-256.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "sonar2prompt@esos",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+# Artefacts de build (générés par scripts/build.ps1)
+web-ext-artifacts/
+*.xpi
+
+# Dépendances
+node_modules/
+
+# Divers OS / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../icons/icon.svg" alt="" width="20" height="20">
+    <h1>SonarQube → Prompt IA</h1>
+  </header>
+  <main>
+    <div id="context" class="context"></div>
+
+    <div class="row">
+      <label for="grouping">Regroupement</label>
+      <select id="grouping">
+        <option value="rule">Par règle (plus condensé)</option>
+        <option value="file">Par fichier</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="maxIssues">Nombre max d'issues</label>
+      <input type="number" id="maxIssues" min="1" max="10000" step="1" value="500">
+    </div>
+
+    <label class="check">
+      <input type="checkbox" id="useFilters" checked>
+      <span>Reprendre les filtres de la page (sévérité, type, branche, nouveau code…)</span>
+    </label>
+
+    <details>
+      <summary>Template du prompt</summary>
+      <textarea id="template" rows="9" spellcheck="false"></textarea>
+      <div class="hint">Placeholders disponibles : {{PROJECT}}, {{COUNT}}, {{TOTAL}}, {{ISSUES}}</div>
+      <button id="resetTemplate" type="button" class="link">Réinitialiser le template</button>
+    </details>
+
+    <button id="generate" type="button" class="primary">Générer le prompt</button>
+
+    <div id="status" class="status" hidden></div>
+
+    <div id="output" hidden>
+      <div id="stats" class="stats"></div>
+      <textarea id="result" rows="13" spellcheck="false"></textarea>
+      <div class="actions">
+        <button id="copy" type="button" class="primary">📋 Copier</button>
+        <button id="download" type="button">💾 Télécharger .md</button>
+      </div>
+    </div>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
